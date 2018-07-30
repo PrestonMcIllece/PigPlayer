@@ -1,0 +1,107 @@
+/**
+ * Auto Generated Java Class.
+ */
+public abstract class PigPlayer 
+{
+
+  protected String playersName;
+  protected int currentScore = 0;
+  protected int gamesWon = 0;
+ 
+  public PigPlayer(String name)
+  {
+    playersName = name;
+  }
+  
+  public void setName(String name)
+  {
+    playersName = name;
+  }
+  
+  public String getName()
+  {
+    return playersName;
+  }
+  
+  public void reset()
+  {
+    currentScore = 0;
+  }
+  
+  public void addPoints(int turnTotal)
+  {
+    currentScore += turnTotal;
+    
+    if (currentScore >= PigGame.GOAL)
+    {
+      gamesWon++;
+    }
+  }
+  
+  public boolean won()
+  {
+    if (currentScore >= PigGame.GOAL)
+    {
+      return true;
+    }
+    
+    else
+    {
+      return false;
+    }
+  }
+  
+  public int getScore()
+  {
+    return currentScore;
+  }
+  
+  public int getWinRecord()
+  {
+    return gamesWon;
+  }
+  
+  public String toString()
+  {
+    return "Player's name: " + playersName + ". Player's current score: " + currentScore;
+  }
+  
+  
+ 
+ // Returns a boolean value indicating if the player wants to roll the Die again.
+ // Returns true to roll again, false to not roll again.
+public abstract boolean isRolling(int turnTotal, int opponentScore);
+  
+  
+public void resetWinRecord()
+{
+  gamesWon = 0;
+}
+
+
+  /*
+   public static void main(String[] args) { 
+     
+     PigPlayer preston = new PigPlayer("Preston");
+     System.out.println("Player name is " + preston.getName());
+     
+    preston.setName("Not Preston lol");
+     System.out.println("Player name is " + preston.getName());
+     
+  
+     preston.addPoints(22);
+     preston.addPoints(12);
+     preston.addPoints(66);
+     System.out.println("Current score is " + preston.getScore());
+     System.out.println(preston.won());
+     
+     preston.reset();
+     System.out.println("Current score after reset is " + preston.getScore());
+     System.out.println(preston.won());
+     
+     System.out.println("Player has won " + preston.getWinRecord() + " games.");
+      
+   }
+   
+   */
+}

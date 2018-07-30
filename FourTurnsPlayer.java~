@@ -1,0 +1,29 @@
+public class FourTurnsPlayer extends PigPlayer
+{
+  int timesHeld = 0;
+  
+  if (isRolling() == false)
+  {
+    timesHeld++;
+  }
+  
+  while (won() == false)
+  {
+    if (timesHeld = 0)
+    {
+      SimpleHoldPlayer(name, (GOAL /4));
+    }
+    else if (timesHeld = 1)
+    {
+      SimpleHoldPlayer(name, ((GOAL - currentScore) / 3));
+    }
+    else if (timesHeld = 2)
+    {
+      SimpleHoldPlayer(name, ((GOAL - currentScore) / 2));
+    }
+    else
+    {
+      SimpleHoldPlayer(name, (GOAL - currentScore));
+    }
+  }
+}

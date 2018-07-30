@@ -1,0 +1,11 @@
+public class StrategicPlayer
+{
+  protected int reasonable;
+  protected int close;
+  
+  public StrategicPlayer(String name, int hold, int sketchy)
+  {
+    super(name);
+    reasonable = hold;
+    close = sketchy;
+  }
